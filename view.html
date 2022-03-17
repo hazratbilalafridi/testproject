@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/view.css">
+    <title>view_page</title>
+</head>
+<body>
+    <h1>View data Table</h1>
+    <div class="container"id="vietb">
+    <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">date_of_birth</th>
+            <th scope="col">item</th>
+            <th scope="col">quantity</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+
+
+          </tr>
+        </thead>
+        
+      </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: "view.php",
+                // data: "data",
+                // dataType: "dataType",
+                success: function (response) {
+                    $(".table").append(response);
+                }
+            });
+
+            
+   
+   
+        });
+    </script>
+</body>
+</html>
